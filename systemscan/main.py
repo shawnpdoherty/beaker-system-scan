@@ -491,7 +491,7 @@ def read_inventory(inventory, arch = None, proc_cpuinfo='/proc/cpuinfo'):
 
     for device in devices:
         # Defaults for nonexistent values
-        description = driver = bus = device_class = "Unknown"
+        description = driver = bus = device_class = firmware = "Unknown"
         vendorID = deviceID = subsysVendorID = subsysDeviceID = "0000"
 
         if device.findtext('product'):
@@ -539,9 +539,12 @@ def read_inventory(inventory, arch = None, proc_cpuinfo='/proc/cpuinfo'):
         # The system itself is not a device
         if device_class == 'system':
             continue
-        # The motherboard is not a device in the sense that we care about
+        # Add BIOS information to device table
         if device.get('id') == 'core':
-            continue
+            firmwarenode = device.find('.//node[@id="firmware"]')
+            if firmwarenode is not None:
+                description = firmwarenode.findtext('description')
+                firmware = firmwarenode.findtext('version')
         # Volumes/partitions are transient
         if device_class == 'volume':
             continue
@@ -576,6 +579,10 @@ def read_inventory(inventory, arch = None, proc_cpuinfo='/proc/cpuinfo'):
             device_type = 'VIDEO'
         elif device_class == 'multimedia':
             device_type = 'AUDIO'
+        elif device_class == 'network':
+            firmwarenode = device.find('configuration/setting[@id="firmware"]')
+            if firmwarenode is not None:
+                firmware = firmwarenode.get('value')
 
         data['Devices'].append(dict( vendorID = vendorID,
                                      deviceID = deviceID,
@@ -584,7 +591,8 @@ def read_inventory(inventory, arch = None, proc_cpuinfo='/proc/cpuinfo'):
                                      bus = bus,
                                      driver = driver,
                                      type = device_type,
-                                     description = description))
+                                     description = description,
+                                     fw_version = firmware))
 
     return data
 
