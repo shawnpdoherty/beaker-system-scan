@@ -4,11 +4,23 @@
   "Hypervisor": null, 
   "Devices": [
     {
+      "bus": "None",
+      "description": "Motherboard",
+      "deviceID": "0000",
+      "driver": "None",
+      "fw_version": "None",
+      "subsysDeviceID": "0000",
+      "subsysVendorID": "0000",
+      "type": "BUS",
+      "vendorID": "0000"
+    },
+    {
       "vendorID": "0000", 
       "description": "3215 terminal", 
       "subsysVendorID": "0000", 
       "bus": "ccw", 
       "driver": "3215", 
+      "fw_version": "None",
       "deviceID": "0000", 
       "subsysDeviceID": "0000", 
       "type": "COMMUNICATION"
@@ -19,6 +31,7 @@
       "subsysVendorID": "0000", 
       "bus": "ccw", 
       "driver": "vmur", 
+      "fw_version": "None",
       "deviceID": "0000", 
       "subsysDeviceID": "0000", 
       "type": "GENERIC"
@@ -29,6 +42,7 @@
       "subsysVendorID": "0000", 
       "bus": "ccw", 
       "driver": "vmur", 
+      "fw_version": "None",
       "deviceID": "0000", 
       "subsysDeviceID": "0000", 
       "type": "GENERIC"
@@ -39,6 +53,7 @@
       "subsysVendorID": "0000", 
       "bus": "ccw", 
       "driver": "vmur", 
+      "fw_version": "None",
       "deviceID": "0000", 
       "subsysDeviceID": "0000", 
       "type": "PRINTER"
@@ -49,6 +64,7 @@
       "subsysVendorID": "0000", 
       "bus": "ccw", 
       "driver": "ctcm", 
+      "fw_version": "None",
       "deviceID": "0000", 
       "subsysDeviceID": "0000", 
       "type": "NETWORK"
@@ -58,6 +74,7 @@
       "description": "Channel-to-Channel device", 
       "subsysVendorID": "0000", 
       "bus": "ccw", 
+      "fw_version": "None",
       "driver": "ctcm", 
       "deviceID": "0000", 
       "subsysDeviceID": "0000", 
@@ -69,6 +86,7 @@
       "subsysVendorID": "0000", 
       "bus": "ccw", 
       "driver": "qeth_l2", 
+      "fw_version": "V614",
       "deviceID": "0000", 
       "subsysDeviceID": "0000", 
       "type": "NETWORK"
@@ -79,6 +97,7 @@
       "subsysVendorID": "0000", 
       "bus": "ccw", 
       "driver": "qeth", 
+      "fw_version": "None",
       "deviceID": "0000", 
       "subsysDeviceID": "0000", 
       "type": "NETWORK"
@@ -89,6 +108,7 @@
       "subsysVendorID": "0000", 
       "bus": "ccw", 
       "driver": "qeth", 
+      "fw_version": "None",
       "deviceID": "0000", 
       "subsysDeviceID": "0000", 
       "type": "NETWORK"
@@ -99,6 +119,7 @@
       "subsysVendorID": "0000", 
       "bus": "ccw", 
       "driver": "qeth", 
+      "fw_version": "None",
       "deviceID": "0000", 
       "subsysDeviceID": "0000", 
       "type": "NETWORK"
@@ -109,6 +130,7 @@
       "subsysVendorID": "0000", 
       "bus": "ccw", 
       "driver": "qeth", 
+      "fw_version": "None",
       "deviceID": "0000", 
       "subsysDeviceID": "0000", 
       "type": "NETWORK"
@@ -119,6 +141,7 @@
       "subsysVendorID": "0000", 
       "bus": "ccw", 
       "driver": "qeth", 
+      "fw_version": "None",
       "deviceID": "0000", 
       "subsysDeviceID": "0000", 
       "type": "NETWORK"
@@ -127,8 +150,9 @@
       "vendorID": "0000", 
       "description": "z/VM IUCV hypervisor console", 
       "subsysVendorID": "0000", 
-      "bus": "Unknown", 
+      "bus": "None", 
       "driver": "hvc_iucv", 
+      "fw_version": "None",
       "deviceID": "0000", 
       "subsysDeviceID": "0000", 
       "type": "GENERIC"

@@ -83,6 +83,5 @@ class SystemScanTest(unittest.TestCase):
         out = main.read_inventory(inputxml, arch='x86_64',
                 proc_cpuinfo=os.path.abspath('x86-kvm-guest.cpuinfo.txt'))
         self.assertEquals(expected, out)
-
 if __name__ == "__main__":
     unittest.main()
